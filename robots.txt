@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://academicaltechs.kesug.com/sitemap.xml
+Sitemap: https://frank-dev26.github.io/academical-techs/sitemap.xml
