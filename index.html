@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ACADEMICAL TECHS - Progressor</title>
+
+    <meta name="description" content="ACADEMICAL TECHS présente Progressor, une application innovante pour calculer les moyennes, suivre les progrès et faciliter la vie académique des élèves et étudiants.">
+
+    <meta name="keywords" content="Progressor, calculer les moyennes, application académique, ACADEMICAL TECHS, étudiants, éducation, technologie scolaire">
+
+    <meta name="author" content="Frank - ACADEMICAL TECHS">
+
+    <meta property="og:title" content="ACADEMICAL TECHS - Progressor">
+    <meta property="og:description" content="Découvrez Progressor, l’outil académique qui simplifie la vie des étudiants.">
+    <meta property="og:image" content="logo.jpg">
+    <meta property="og:url" content="https://progressor.kesug.com">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="logo.jpg">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* FOND ANIMÉ */
+
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+
+    background:
+    radial-gradient(circle at top left,#0066ff,#050816),
+    radial-gradient(circle at bottom right,#ff00c8,#050816);
+
+    filter:blur(90px);
+
+    animation:bgMove 10s infinite alternate;
+}
+
+@keyframes bgMove{
+
+    0%{
+        transform:scale(1) rotate(0deg);
+    }
+
+    100%{
+        transform:scale(1.2) rotate(8deg);
+    }
+
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.title{
+    font-size:60px;
+    margin-top:20px;
+
+    text-shadow:
+    0 0 10px #00aaff,
+    0 0 20px #00aaff,
+    0 0 40px #00aaff;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.logo{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-top:30px;
+
+    box-shadow:
+    0 0 30px #00aaff,
+    0 0 70px #00aaff;
+
+    transition:0.5s;
+}
+
+.logo:hover{
+    transform:rotate(8deg) scale(1.08);
+}
+
+.card{
+    margin-top:40px;
+    padding:35px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,0.08);
+
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 25px #00aaff,
+    0 0 60px rgba(0,170,255,0.4);
+}
+
+h3{
+    margin-bottom:20px;
+    font-size:35px;
+    color:#00c3ff;
+}
+
+p{
+    line-height:1.9;
+    font-size:19px;
+}
+
+.product-btn{
+    margin-top:25px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(45deg,#0066ff,#ff00c8);
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,0.2);
+
+    transition:0.4s;
+}
+
+.product-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 25px #00aaff,
+    0 0 60px #ff00c8;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.stat-box{
+    width:220px;
+    padding:25px;
+
+    background:rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.4s;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+}
+
+.number{
+    font-size:55px;
+    font-weight:bold;
+    color:#00c3ff;
+}
+
+.label{
+    margin-top:10px;
+    font-size:18px;
+}
+
+footer{
+    margin-top:60px;
+    padding:30px;
+    text-align:center;
+    opacity:0.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+    .title{
+        font-size:35px;
+    }
+
+    h3{
+        font-size:28px;
+    }
+
+    p{
+        font-size:17px;
+    }
+
+    .logo{
+        width:170px;
+        height:170px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <h2 class="title">ACADEMICAL TECHS by Frank</h2>
+
+    <img src="logo.jpg" alt="logo de ACADEMICAL TECHS" class="logo">
+
+    <div class="card">
+
+        <h3>Qui sommes-nous ?</h3>
+
+        <p>
+            Nous sommes <strong>ACADEMICAL TECHS</strong>, un groupe passionné par les nouvelles technologies
+            et dédié à la création d’applications qui facilitent la vie académique des élèves et étudiants.
+            Notre objectif est de transformer des tâches parfois longues et compliquées en processus simples,
+            rapides et accessibles à tous.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Notre mission</h3>
+
+        <p>
+            Grâce à nos solutions, comme <strong>Progressor</strong>, nous aidons les apprenants à mieux
+            organiser leur travail, calculer leurs moyennes, suivre leurs progrès et atteindre leurs objectifs.
+            Nous croyons que la technologie doit être au service de l’éducation.
+        </p>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <div class="number" id="count1">0</div>
+            <div class="label">Applications</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="number" id="count2">0</div>
+            <div class="label">Idées innovantes</div>
+        </div>
+
+        <div class="stat-box">
+            <div class="number" id="count3">0</div>
+            <div class="label">Motivation</div>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Notre produit principal</h3>
+
+        <p>
+            <strong>Progressor</strong> est une application moderne permettant de calculer efficacement les moyennes,
+            suivre les performances scolaires et améliorer l’organisation académique.
+        </p>
+
+        <br>
+
+        <a href="https://progressor.kesug.com" target="_blank">
+            <button class="product-btn">
+                OUVRIR PROGRESSOR
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 ACADEMICAL TECHS - Tous droits réservés
+</footer>
+
+<script>
+
+/* ANIMATION DES CHIFFRES */
+
+function animateValue(id, start, end, duration){
+
+    let current = start;
+
+    const range = end - start;
+
+    const increment = end > start ? 1 : -1;
+
+    const stepTime = Math.abs(Math.floor(duration / range));
+
+    const obj = document.getElementById(id);
+
+    const timer = setInterval(() => {
+
+        current += increment;
+
+        obj.textContent = current;
+
+        if(current == end){
+            clearInterval(timer);
+        }
+
+    }, stepTime);
+
+}
+
+animateValue("count1",0,1,2000);
+animateValue("count2",0,50,2500);
+animateValue("count3",0,100,3000);
+
+/* EFFET APPARITION */
+
+const cards = document.querySelectorAll('.card, .stat-box');
+
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+
+    const triggerBottom = window.innerHeight / 1.2;
+
+    cards.forEach(card => {
+
+        const boxTop = card.getBoundingClientRect().top;
+
+        if(boxTop < triggerBottom){
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0px)';
+        }
+
+    });
+
+}
+
+cards.forEach(card => {
+
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(80px)';
+    card.style.transition = '0.8s';
+
+});
+
+reveal();
+
+/* MESSAGE BIENVENUE */
+
+setTimeout(() => {
+
+    alert("Bienvenue sur ACADEMICAL TECHS ");
+
+}, 1200);
+
+</script>
+
+</body>
+</html>
